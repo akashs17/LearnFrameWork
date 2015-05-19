@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Demo Suite" verbose="1" >
+
+ <listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  
+  <test name="LoginFunctonality for Valid User Name and Password">
+    <classes>
+      <class name="exzeo.TestCases.ValidateLoginFunctionalityForValidUserNameAndPassword"/>      
+    </classes>
+  </test>
+  
+    <test name="LoginFunctonality for blank User Name and Password">
+    <classes>
+      <class name="exzeo.TestCases.ValidationLoginFunctionalityForBlankUserNameAndPassword"/>      
+    </classes>
+  </test>
+  
+  <test name="LoginFunctonality for incorrect User Name and Password">
+    <classes>
+      <class name="exzeo.TestCases.ValidateLoginFunctionalityForIncorrectUserNamePassword"/>      
+    </classes>
+  </test>
+  
+  <test name="LoginFunctonality for Blocked User ">
+    <classes>
+      <class name="exzeo.TestCases.ValidateLoginFunctionalityForBlockedUser"/>      
+    </classes>
+  </test>
+  
+  <test name="Validate Signup Functionallity for Invalid Email ID">
+    <classes>
+      <class name="exzeo.TestCases.SignupFunctionalityForInvalidEmailID"/>      
+    </classes>
+  </test>
+ 
+  <test name="Validate Signup Functionallity for Invalid First Name and Last Name">
+    <classes>
+      <class name="exzeo.TestCases.SignUpFunctionalityForInvalidFirstLastName"/>      
+    </classes>
+  </test>
+  
+   <test name="Validate Signup Functionallity for blank required fields value">
+    <classes>
+      <class name="exzeo.TestCases.SignupUserFunctionalityForBlankFieldsValue"/>      
+    </classes>
+  </test> 
+  
+    <test name="Validate Signup Functionallity for already registered Email">
+    <classes>
+      <class name="exzeo.TestCases.SingUpFunctionalityForRegisteredEmail"/>      
+    </classes>
+  </test> 
+</suite>

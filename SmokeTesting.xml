@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Demo Suite" verbose="1" >
+
+ <listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  
+  <test name="LoginFunctonality">
+    <classes>
+      <class name="exzeo.TestCases.TestLoginFunctionality"/>      
+    </classes>
+  </test>
+</suite>
