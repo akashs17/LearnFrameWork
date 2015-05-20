@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.TestListenerAdapter;
 
 import exzeo.Configuration.Constants;
 
@@ -20,7 +19,7 @@ public class LandingPage {
 	WebElement createWorkkardButton;
 	
 	
-	public  LandingPage(WebDriver driver) {
+	public LandingPage(WebDriver driver) {
 		
 		this.driver=driver;	
 		wait= new WebDriverWait(this.driver, Constants.EXPLICT_TIMEOUT);
