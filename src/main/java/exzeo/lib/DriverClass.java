@@ -16,7 +16,8 @@ public class DriverClass {
 			driver= new FirefoxDriver();
 		else if(browserName.startsWith("C"))
 		{
-			System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
+			String dir=System.getProperty("user.dir") + "\\chromedriver_win32\\chromedriver.exe";
+			System.setProperty("webdriver.chrome.driver", dir);
 			driver= new ChromeDriver();
 			
 		}
