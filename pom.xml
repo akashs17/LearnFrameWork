@@ -19,7 +19,8 @@
 	  <groupId>org.testng</groupId>
 	  <artifactId>testng</artifactId>
 	  <version>6.9.4</version>
-	  <scope>test</scope>
+	  <scope>test,compile</scope>
+	  
 	</dependency>
 	
 	 <dependency>
