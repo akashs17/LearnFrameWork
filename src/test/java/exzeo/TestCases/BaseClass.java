@@ -1,5 +1,7 @@
 package exzeo.TestCases;
 
+import java.net.MalformedURLException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -14,7 +16,7 @@ public class BaseClass {
 	WebDriverWait wait=null;
 	
 	@BeforeTest
-	public void setUpTest() {
+	public void setUpTest() throws MalformedURLException {
 		
 		DriverClass driverManage= new DriverClass();
 		

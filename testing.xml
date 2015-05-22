@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="Demo Suite" verbose="1" >
+<suite name="Demo Suite" verbose="1" parallel="tests" thread-count="4" >
 
  <listeners>
       <listener class-name="org.uncommons.reportng.HTMLReporter"/>
