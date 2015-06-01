@@ -24,6 +24,7 @@ LoginPage loginPage=null;
 		
 		loginPage.waitForSignupElementDisplay();
 		Thread.sleep(2000);
+		
 		Assert.assertEquals(loginPage.getEmailError(), "This email is already registered with Exzeo."); 
 		
 		Assert.assertFalse(loginPage.isFirstNameErrorDisplayed());

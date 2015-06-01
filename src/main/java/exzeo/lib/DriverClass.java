@@ -39,6 +39,7 @@ public class DriverClass {
 			String dir=System.getProperty("user.dir") + "\\chromedriver_win32\\chromedriver.exe";
 			System.setProperty("webdriver.chrome.driver", dir);
 			driver= new ChromeDriver();
+			driver.manage().window().maximize();
 			
 		}
 			

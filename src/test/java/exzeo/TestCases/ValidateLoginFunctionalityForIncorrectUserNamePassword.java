@@ -21,8 +21,9 @@ public class ValidateLoginFunctionalityForIncorrectUserNamePassword  extends Bas
 	}
 
 	@Test(priority=2,dependsOnMethods={"enterIncorrectUserNameAndPassword"})
-	public void checkValidationMessage(){
+	public void checkValidationMessage() throws Exception{
 		
+		Thread.sleep(2000);
 		Assert.assertEquals(loginPage.getUnSucessErrorMessage(),"Username/Email or Password entered is incorrect.");			
 						
 	}

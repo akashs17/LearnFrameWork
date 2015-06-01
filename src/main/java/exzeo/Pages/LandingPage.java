@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import exzeo.Configuration.Constants;
@@ -17,6 +18,10 @@ public class LandingPage {
 	
 	@FindBy(id="lnkCreateWorkkard")
 	WebElement createWorkkardButton;
+	
+	@FindBy(id = "urlddl")
+	WebElement templateType;
+	
 	
 	
 	public LandingPage(WebDriver driver) {
@@ -30,6 +35,13 @@ public class LandingPage {
 		
 	public void clickOnCreateWorkkardButton(){
 		createWorkkardButton.click();
+	}
+	
+	public void selectClaimTemplate()
+	{
+		Select tempType= new Select(templateType);
+		tempType.selectByValue("Claim Workkard");
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtFirstName")));
 	}
 	
 }
