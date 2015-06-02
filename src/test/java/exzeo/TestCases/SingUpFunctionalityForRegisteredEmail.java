@@ -20,7 +20,7 @@ LoginPage loginPage=null;
 	}
 	
 	@Test(priority=2,dependsOnMethods={"signupUserWithRegisteredEmail"})
-	public void verifyValidationMessages() throws InterruptedException{
+	public void verifyValidationMessagesForRegisterEmail() throws InterruptedException{
 		
 		loginPage.waitForSignupElementDisplay();
 		Thread.sleep(2000);

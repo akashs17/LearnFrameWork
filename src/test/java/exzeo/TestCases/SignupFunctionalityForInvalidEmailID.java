@@ -20,7 +20,7 @@ public class SignupFunctionalityForInvalidEmailID extends BaseClass {
 	}
 	
 	@Test(priority=2,dependsOnMethods={"signupWithIncorrectEmail"})
-	public void verifyValidationMessages(){
+	public void verifyValidationMessagesForInvalidEmail(){
 		
 		loginPage.waitForSignupElementDisplay();
 		

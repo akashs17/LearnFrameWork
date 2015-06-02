@@ -18,7 +18,7 @@ public class ValidationLoginFunctionalityForBlankUserNameAndPassword extends Bas
 	}
 
 	@Test(priority=2,dependsOnMethods={"enterBlankUserNamePassword"})
-	public void checkValidationMessage(){
+	public void checkValidationMessageForBlankUserAndPassword(){
 		
 		Assert.assertEquals(loginPage.getUserNameErrorMessage().trim(),"Username/Email is required.");
 		

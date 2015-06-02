@@ -20,7 +20,7 @@ public class SignUpFunctionalityForInvalidFirstLastName extends BaseClass{
 	}
 	
 	@Test(priority=2,dependsOnMethods={"signupWithIncorrectFirstAndLastName"})
-	public void verifyValidationMessages(){
+	public void verifyValidationMessagesForIncorrectFirstAndLastName(){
 		
 		Assert.assertFalse(loginPage.isEmailErrorDisplayed()); 
 		

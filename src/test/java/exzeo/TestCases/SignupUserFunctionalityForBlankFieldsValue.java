@@ -20,7 +20,7 @@ public class SignupUserFunctionalityForBlankFieldsValue extends BaseClass{
 	}
 	
 	@Test(priority=2,dependsOnMethods={"clickSignupButtonWithBlankValues"})
-	public void verifyValidationMessages(){
+	public void verifyValidationMessagesForBlankUserAndPassword(){
 		
 		Assert.assertEquals(loginPage.getEmailError(), "Email is required."); 
 		
