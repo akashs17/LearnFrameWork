@@ -1,4 +1,4 @@
-package lib;
+package exzeo.lib;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestContext;
