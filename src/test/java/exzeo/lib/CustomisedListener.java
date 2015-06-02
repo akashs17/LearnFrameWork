@@ -17,7 +17,7 @@ public class CustomisedListener implements ITestListener,ISuiteListener {
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		
-		String path=System.getProperty("user.dir")+ "\\target\\surefire-reports\\html\\ScreenShots\\" +result.getName() +".png";
+		String path=System.getProperty("JENKINS_URL")+ "\\target\\surefire-reports\\html\\ScreenShots\\" +result.getName() +".png";
 		Reporter.log("<li>" + result.getName() + " : Passed</li>" );
 		Reporter.log("<a href=\"" + path + "\"  target=\"_blank\">" + "<img src=\"" + path+ "\" height="+ "\"100\""  + " width=\"200\"" + "/><br></a>");
 
@@ -26,7 +26,7 @@ public class CustomisedListener implements ITestListener,ISuiteListener {
 
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
-		String path=System.getProperty("user.dir")+ "\\target\\surefire-reports\\html\\ScreenShots\\" +result.getName() +".png";
+		String path=System.getProperty("JENKINS_URL")+ "\\target\\surefire-reports\\html\\ScreenShots\\" +result.getName() +".png";
 		Reporter.log("<li>" + result.getName() + " : Failed</li>" );
 		Reporter.log("<a href=\"" + path + "\"  target=\"_blank\">" + "<img src=\"" + path+ "\" height="+ "\"100\""  + " width=\"200\"" + "/><br></a>");
 		
