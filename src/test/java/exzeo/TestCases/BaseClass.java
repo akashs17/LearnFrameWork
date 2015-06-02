@@ -48,7 +48,7 @@ public class BaseClass {
 	@AfterMethod
 	public void afterTest(ITestResult result) throws IOException{
 			
-			String path=System.getProperty("HUDSON_URL")+ "\\target\\surefire-reports\\html\\ScreenShots\\" +result.getName() +".png";
+			String path=System.getProperty("user.dir")+ "\\target\\surefire-reports\\html\\ScreenShots\\" +result.getName() +".png";
 			File file=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(file, new File(path));
 								
