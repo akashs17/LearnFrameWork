@@ -22,17 +22,17 @@ public class DriverClass {
 			driver= new InternetExplorerDriver();
 		else if(browserName.startsWith("F"))
 		{
-		/*	capbilities=DesiredCapabilities.firefox();
+			capbilities=DesiredCapabilities.firefox();
 			capbilities.setBrowserName("firefox");
 			capbilities.setPlatform(Platform.VISTA);
 			driver= new RemoteWebDriver( new URL("http://localhost:4444/wd/hub"),capbilities);
-		*/	
+		
 			
 			//capbilities.setCapability("jenkins.nodeName","(master)");
 			//capbilities.setVersion("36");
 			
 			
-			driver=new FirefoxDriver();
+			//driver=new FirefoxDriver();
 		}
 		else if(browserName.startsWith("C"))
 		{
