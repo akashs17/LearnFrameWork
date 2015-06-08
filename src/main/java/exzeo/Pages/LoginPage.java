@@ -211,4 +211,5 @@ public class LoginPage {
 	public void waitForSignupElementDisplay(){
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnSignup")));
 	}
+	
 }

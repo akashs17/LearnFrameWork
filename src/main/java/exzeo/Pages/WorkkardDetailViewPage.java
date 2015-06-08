@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -24,9 +26,8 @@ public class WorkkardDetailViewPage {
 		this.driver=driver;	
 		wait= new WebDriverWait(this.driver, Constants.EXPLICT_TIMEOUT);
 		// TODO Auto-generated constructor stub		
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("workkard_detail_loader")));
-		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("workkardId")));
 		waitForJQueryProcessing(driver);
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("workkardId")));		
 		PageFactory.initElements(driver, this);	
 	}
 	
@@ -79,6 +80,56 @@ public class WorkkardDetailViewPage {
 	@FindBy(xpath="//label[text()='Alternate Phone']/following-sibling::em")
 	WebElement alternatePhone;
 
+	//-------------------Action Menu----------------------------------
+	
+	@FindBy(css="#divWorkkardAction span.drop_menu_head")
+	WebElement actionIcon;
+	
+	@FindBy(id="lnkChangeWorkkardSoonsor")
+	WebElement changeWorkkardSponsor;
+	
+	@FindBy(css="div.popup.cc-popup")
+	WebElement changeWorkkardSponsorPopUp;
+	
+	@FindBy(id="drag_img_box")
+	WebElement dropImageElement;
+	
+	@FindBy(css="span[title='testaditya1@yopmail.com']")
+	WebElement dragImageElement;
+	
+	
+	@FindBy(id="lnkConfirmSponsor")
+	WebElement confirmSponsorButton;
+	
+	
+	public void clickActionMenuAndWaitForMenuDispalay(){
+		
+		Actions actions= new Actions(driver);
+		actions.moveToElement(actionIcon).build().perform();;
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("lnkChangeWorkkardSoonsor")));
+	}
+	
+	public void clickChangeWorkkardSponsorAndWaitForPopup(){
+		
+		
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", changeWorkkardSponsor);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[title='testaditya1@yopmail.com']")));
+	}
+	
+	 public void dragAndDropNewSponsor(){
+		 
+		 Actions actions= new Actions(driver);
+		 actions.dragAndDrop(dragImageElement, dropImageElement).build().perform();
+		 wait.until(ExpectedConditions.presenceOfElementLocated(By.id("lnkConfirmSponsor")));
+	 }
+	
+	public WorkkardDetailViewPage clickCWSConfirmButton(){
+		confirmSponsorButton.click();
+		return new WorkkardDetailViewPage(driver);
+	}
+	
 	public String getWorkkardNumber() {
 		return workkardNumber.getText();
 	}

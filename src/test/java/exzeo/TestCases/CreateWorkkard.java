@@ -15,6 +15,7 @@ import org.testng.Reporter;
 import org.testng.ReporterConfig;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import org.testng.reporters.jq.ReporterPanel;
@@ -34,16 +35,19 @@ public class CreateWorkkard extends BaseClass {
 	HashMap<String, String> workkardDetails=null;
 	WorkkardDetailViewPage detailView=null;
 	String policyNumber="HCPCI" + Math.random();
+	LandingPage landing=null;
 	
 	HTMLReporter asd= new HTMLReporter();
 	
 	@Test(priority=1)
 	public void loginWithValidUser(){
 		LoginPage login= new LoginPage(driver);
-		LandingPage landing= login.loginWithSuccess("pcsupervisor", "12345678");
+		landing= login.loginWithSuccess("pcsupervisor", "12345678");
 		landing.clickOnCreateWorkkardButton();
 		
 	}
+	
+
 	
 	@Test(priority=2)
 	public void createWorkkard(){
@@ -100,4 +104,16 @@ public class CreateWorkkard extends BaseClass {
 		softAssert.assertAll();
 	}
 	
+	@Test(priority=4)
+	public void changeWorkkardSponsor(){
+		
+		detailView.clickActionMenuAndWaitForMenuDispalay();
+		
+		detailView.clickChangeWorkkardSponsorAndWaitForPopup();
+		
+		detailView.dragAndDropNewSponsor();
+		
+		detailView.clickCWSConfirmButton();		
+	
+	}
 }

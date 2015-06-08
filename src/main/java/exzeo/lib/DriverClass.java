@@ -25,7 +25,7 @@ public class DriverClass {
 			capbilities=DesiredCapabilities.firefox();
 			capbilities.setBrowserName("firefox");
 			capbilities.setPlatform(Platform.VISTA);
-			driver= new RemoteWebDriver( new URL("http://192.168.1.92:4444/wd/hub"),capbilities);
+			driver= new RemoteWebDriver( new URL("http://tryexzeo.com"),capbilities);
 		
 			
 			//capbilities.setCapability("jenkins.nodeName","(master)");

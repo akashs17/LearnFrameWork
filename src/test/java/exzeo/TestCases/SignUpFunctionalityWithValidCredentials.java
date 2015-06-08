@@ -1,5 +1,11 @@
 package exzeo.TestCases;
 
-public class SignUpFunctionalityWithValidCredentials {
+import org.testng.annotations.Test;
 
+import exzeo.Pages.LoginPage;
+
+public class SignUpFunctionalityWithValidCredentials   {
+
+
+	
 }
